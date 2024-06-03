@@ -19,3 +19,5 @@ jobs:
         aws-region: ap-south-1
     - name: deploy-to-s3
       run: aws s3 sync . s3://s3-github-automation
+    - name: cloudfront-invalidation
+      run: aws cloudfront create-invalidation --distribution-id  E3U8UY1VTAGHW1 --paths '/*'
